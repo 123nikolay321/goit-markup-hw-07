@@ -15,6 +15,7 @@
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" />
     <link rel="stylesheet" href="./css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
 
@@ -30,6 +31,11 @@
                     <li class="menu-item"><a class="menu-link link" href="#">Contacts</a></li>
                 </ul>
             </nav>
+            <button type="button" class="mobile-menu-open-btn js-open-menu" aria-expanded="false">
+                <svg class="mobile-menu-open-btn-icon" width="32" height="22">
+                    <use href="./images/icons.svg#icon-burger"></use>
+                </svg>
+            </button>
             <address class="contacts-header">
                 <ul class="contacts-list list">
                     <li class="menu-item"><a class="contact-item link"
@@ -39,6 +45,77 @@
                     </li>
                 </ul>
             </address>
+        </div>
+        <!--  -->
+        <div class="mobile-menu-wrapper js-menu-container">
+            <div class="mobile-menu-container">
+                <!-- close -->
+                <button class="button-close-mobile-menu js-close-menu" type="button">
+                    <svg class="icon-close-mobile-menu" aria-label="close icon" width="8" height="8">
+                        <use href="./images/icons.svg#icon-close">
+                        </use>
+                    </svg>
+                </button>
+                <!-- nav mobile -->
+                <nav class="mobile-navigation">
+                    <ul class="mobile-menu-nav list">
+                        <li class="menu-mobile-item"><a class="menu-mobile-link link" href="./index.html">Studio</a>
+                        </li>
+                        <li class="menu-mobile-item"><a class="menu-mobile-link link active-page"
+                                href="./portfolio.html">Portfolio</a></li>
+                        <li class="menu-mobile-item"><a class="menu-mobile-link link" href="#">Contacts</a></li>
+                    </ul>
+                </nav>
+                <!-- tel,email,socials -->
+                <div class="mobile-contacts-wrapper">
+                    <address class="contacts-mobile-menu">
+                        <ul class="mobile-contacts-list list">
+                            <li class="menu-mobile-item"><a class="tel-mobile-link link" href="tel:+110001111111">+11
+                                    (000)
+                                    111-11-11</a>
+                            </li>
+                            <li class="menu-mobile-item"><a class="email-mobile-link link"
+                                    href="mailto:info@devstudio.com">info@devstudio.com</a>
+                            </li>
+                        </ul>
+                    </address>
+                    <!-- social icons -->
+                    <ul class="social-icons-list-menu-mobile list">
+                        <li class="social-icons-item">
+                            <a class="social-list-link " href="#">
+                                <svg class="social-icon" aria-label="social icon" width="24" height="24">
+                                    <use href="./images/icons.svg#icon-instagram">
+                                    </use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social-icons-item">
+                            <a class="social-list-link " href="#">
+                                <svg class="social-icon" aria-label="social icon" width="24" height="24">
+                                    <use href="./images/icons.svg#icon-facebook">
+                                    </use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social-icons-item">
+                            <a class="social-list-link " href="#">
+                                <svg class="social-icon" aria-label="social icon" width="24" height="24">
+                                    <use href="./images/icons.svg#icon-twitter">
+                                    </use>
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="social-icons-item">
+                            <a class="social-list-link " href="#">
+                                <svg class="social-icon" aria-label="social icon" width="24" height="24">
+                                    <use href="./images/icons.svg#icon-linkedin">
+                                    </use>
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -69,13 +146,27 @@
                     <li class="card-portfolio-list-item">
                         <a class="link portfolio-link" href="#">
                             <div class="img-plus-overlay">
-                                <img class="card-portfolio-img" src="./images/portfolio/banking-app.jpg"
-                                    alt="banking application interface" width="360" height="300" />
+                                <picture>
+                                    <!-- DESKTOP -->
+                                    <source
+                                        srcset="./images/desktop/portfolio/banking.jpg 1x, ./images/desktop/portfolio/banking@2x.jpg 2x"
+                                        media="(min-width: 1158px)" width="360" height="300" />
+                                    <!-- TABLET -->
+                                    <source
+                                        srcset="./images/tablet/portfolio/banking.jpg 1x, ./images/tablet/portfolio/banking@2x.jpg 2x"
+                                        media="(min-width: 768px)" width="356" height="300" />
+                                    <!-- MOBILE -->
+                                    <source
+                                        srcset="./images/mobile/portfolio/banking.jpg 1x, ./images/mobile/portfolio/banking@2x.jpg 2x"
+                                        media="(min-width: 280px)" width="396" height="280" />
+                                    <img class="card-portfolio-img" src="./images/desktop/portfolio/banking.jpg"
+                                        alt="banking application interface" width="360" height="300" />
+                                </picture>
                                 <p class="overlay-portfolio">14 Stylish and User-Friendly App Design Concepts · Task
                                     Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
                                 </p>
                             </div>
-                            <div class="container-for-podpis-portfolio">
+                            <div class="container-card-description-portfolio">
                                 <h2 class="card-title">Banking App Interface Concept</h2>
                                 <p class="card-description">App</p>
                             </div>
@@ -84,13 +175,27 @@
                     <li class="card-portfolio-list-item">
                         <a class="link portfolio-link" href="#">
                             <div class="img-plus-overlay">
-                                <img class="card-portfolio-img" src="./images/portfolio/cashless-payment.jpg"
-                                    alt="Mobile phone with qr code" width="360" height="300" />
+                                <picture>
+                                    <!-- DESKTOP -->
+                                    <source
+                                        srcset="./images/desktop/portfolio/cashless.jpg 1x, ./images/desktop/portfolio/cashless@2x.jpg 2x"
+                                        media="(min-width: 1158px)" width="360" height="300" />
+                                    <!-- TABLET -->
+                                    <source
+                                        srcset="./images/tablet/portfolio/cashless.jpg 1x, ./images/tablet/portfolio/cashless@2x.jpg 2x"
+                                        media="(min-width: 768px)" width="356" height="300" />
+                                    <!-- MOBILE -->
+                                    <source
+                                        srcset="./images/mobile/portfolio/cashless.jpg 1x, ./images/mobile/portfolio/cashless@2x.jpg 2x"
+                                        media="(min-width: 280px)" width="396" height="280" />
+                                    <img class="card-portfolio-img" src="./images/desktop/portfolio/cashless.jpg"
+                                        alt="Cashless Payment" width="360" height="300" />
+                                </picture>
                                 <p class="overlay-portfolio">14 Stylish and User-Friendly App Design Concepts · Task
                                     Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
                                 </p>
                             </div>
-                            <div class="container-for-podpis-portfolio">
+                            <div class="container-card-description-portfolio">
                                 <h2 class="card-title">Cashless Payment</h2>
                                 <p class="card-description">Marketing</p>
                             </div>
@@ -99,13 +204,27 @@
                     <li class="card-portfolio-list-item">
                         <a class="link portfolio-link" href="#">
                             <div class="img-plus-overlay">
-                                <img class="card-portfolio-img" src="./images/portfolio/meditation-app.jpg"
-                                    alt="laptop and phone" width="360" height="300" />
+                                <picture>
+                                    <!-- DESKTOP -->
+                                    <source
+                                        srcset="./images/desktop/portfolio/meditation.jpg 1x, ./images/desktop/portfolio/meditation@2x.jpg 2x"
+                                        media="(min-width: 1158px)" width="360" height="300" />
+                                    <!-- TABLET -->
+                                    <source
+                                        srcset="./images/tablet/portfolio/meditation.jpg 1x, ./images/tablet/portfolio/meditation@2x.jpg 2x"
+                                        media="(min-width: 768px)" width="356" height="300" />
+                                    <!-- MOBILE -->
+                                    <source
+                                        srcset="./images/mobile/portfolio/meditation.jpg 1x, ./images/mobile/portfolio/meditation@2x.jpg 2x"
+                                        media="(min-width: 280px)" width="396" height="280" />
+                                    <img class="card-portfolio-img" src="./images/desktop/portfolio/meditation.jpg"
+                                        alt="Meditation application interface" width="360" height="300" />
+                                </picture>
                                 <p class="overlay-portfolio">14 Stylish and User-Friendly App Design Concepts · Task
                                     Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
                                 </p>
                             </div>
-                            <div class="container-for-podpis-portfolio">
+                            <div class="container-card-description-portfolio">
                                 <h2 class="card-title">Meditation App</h2>
                                 <p class="card-description">App</p>
                             </div>
@@ -114,13 +233,27 @@
                     <li class="card-portfolio-list-item">
                         <a class="link portfolio-link" href="#">
                             <div class="img-plus-overlay">
-                                <img class="card-portfolio-img" src="./images/portfolio/taxi-service.jpg"
-                                    alt="car interior" width="360" height="300" />
+                                <picture>
+                                    <!-- DESKTOP -->
+                                    <source
+                                        srcset="./images/desktop/portfolio/taxi.jpg 1x, ./images/desktop/portfolio/taxi@2x.jpg 2x"
+                                        media="(min-width: 1158px)" width="360" height="300" />
+                                    <!-- TABLET -->
+                                    <source
+                                        srcset="./images/tablet/portfolio/taxi.jpg 1x, ./images/tablet/portfolio/taxi@2x.jpg 2x"
+                                        media="(min-width: 768px)" width="356" height="300" />
+                                    <!-- MOBILE -->
+                                    <source
+                                        srcset="./images/mobile/portfolio/taxi.jpg 1x, ./images/mobile/portfolio/taxi@2x.jpg 2x"
+                                        media="(min-width: 280px)" width="396" height="280" />
+                                    <img class="card-portfolio-img" src="./images/desktop/portfolio/taxi.jpg"
+                                        alt="taxi service" width="360" height="300" />
+                                </picture>
                                 <p class="overlay-portfolio">14 Stylish and User-Friendly App Design Concepts · Task
                                     Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
                                 </p>
                             </div>
-                            <div class="container-for-podpis-portfolio">
+                            <div class="container-card-description-portfolio">
                                 <h2 class="card-title">Taxi Service</h2>
                                 <p class="card-description">Marketing</p>
                             </div>
@@ -129,13 +262,27 @@
                     <li class="card-portfolio-list-item">
                         <a class="link portfolio-link" href="#">
                             <div class="img-plus-overlay">
-                                <img class="card-portfolio-img" src="./images/portfolio/screen-illustration.jpg"
-                                    alt="phone and wallpaper examples" width="360" height="300" />
+                                <picture>
+                                    <!-- DESKTOP -->
+                                    <source
+                                        srcset="./images/desktop/portfolio/screen.jpg 1x, ./images/desktop/portfolio/screen@2x.jpg 2x"
+                                        media="(min-width: 1158px)" width="360" height="300" />
+                                    <!-- TABLET -->
+                                    <source
+                                        srcset="./images/tablet/portfolio/screen.jpg 1x, ./images/tablet/portfolio/screen@2x.jpg 2x"
+                                        media="(min-width: 768px)" width="356" height="300" />
+                                    <!-- MOBILE -->
+                                    <source
+                                        srcset="./images/mobile/portfolio/screen.jpg 1x, ./images/mobile/portfolio/screen@2x.jpg 2x"
+                                        media="(min-width: 280px)" width="396" height="280" />
+                                    <img class="card-portfolio-img" src="./images/desktop/portfolio/screen.jpg"
+                                        alt="Screen Illustrations" width="360" height="300" />
+                                </picture>
                                 <p class="overlay-portfolio">14 Stylish and User-Friendly App Design Concepts · Task
                                     Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
                                 </p>
                             </div>
-                            <div class="container-for-podpis-portfolio">
+                            <div class="container-card-description-portfolio">
                                 <h2 class="card-title">Screen Illustrations</h2>
                                 <p class="card-description">Design</p>
                             </div>
@@ -144,13 +291,27 @@
                     <li class="card-portfolio-list-item">
                         <a class="link portfolio-link" href="#">
                             <div class="img-plus-overlay">
-                                <img class="card-portfolio-img" src="./images/portfolio/online-cources.jpg"
-                                    alt="smiling woman with phone in hand" width="360" height="300" />
+                                <picture>
+                                    <!-- DESKTOP -->
+                                    <source
+                                        srcset="./images/desktop/portfolio/online.jpg 1x, ./images/desktop/portfolio/online@2x.jpg 2x"
+                                        media="(min-width: 1158px)" width="360" height="300" />
+                                    <!-- TABLET -->
+                                    <source
+                                        srcset="./images/tablet/portfolio/online.jpg 1x, ./images/tablet/portfolio/online@2x.jpg 2x"
+                                        media="(min-width: 768px)" width="356" height="300" />
+                                    <!-- MOBILE -->
+                                    <source
+                                        srcset="./images/mobile/portfolio/online.jpg 1x, ./images/mobile/portfolio/online@2x.jpg 2x"
+                                        media="(min-width: 280px)" width="396" height="280" />
+                                    <img class="card-portfolio-img" src="./images/desktop/portfolio/online.jpg"
+                                        alt="Online Courses" width="360" height="300" />
+                                </picture>
                                 <p class="overlay-portfolio">14 Stylish and User-Friendly App Design Concepts · Task
                                     Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
                                 </p>
                             </div>
-                            <div class="container-for-podpis-portfolio">
+                            <div class="container-card-description-portfolio">
                                 <h2 class="card-title">Online Courses</h2>
                                 <p class="card-description">Marketing</p>
                             </div>
@@ -159,13 +320,27 @@
                     <li class="card-portfolio-list-item">
                         <a class="link portfolio-link" href="#">
                             <div class="img-plus-overlay">
-                                <img class="card-portfolio-img" src="./images/portfolio/instagram-stories-concept.jpg"
-                                    alt="examples instagram stories" width="360" height="300" />
+                                <picture>
+                                    <!-- DESKTOP -->
+                                    <source
+                                        srcset="./images/desktop/portfolio/instagram.jpg 1x, ./images/desktop/portfolio/instagram@2x.jpg 2x"
+                                        media="(min-width: 1158px)" width="360" height="300" />
+                                    <!-- TABLET -->
+                                    <source
+                                        srcset="./images/tablet/portfolio/instagram.jpg 1x, ./images/tablet/portfolio/instagram@2x.jpg 2x"
+                                        media="(min-width: 768px)" width="356" height="300" />
+                                    <!-- MOBILE -->
+                                    <source
+                                        srcset="./images/mobile/portfolio/instagram.jpg 1x, ./images/mobile/portfolio/instagram@2x.jpg 2x"
+                                        media="(min-width: 280px)" width="396" height="280" />
+                                    <img class="card-portfolio-img" src="./images/desktop/portfolio/instagram.jpg"
+                                        alt="Instagram Stories Concept" width="360" height="300" />
+                                </picture>
                                 <p class="overlay-portfolio">14 Stylish and User-Friendly App Design Concepts · Task
                                     Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
                                 </p>
                             </div>
-                            <div class="container-for-podpis-portfolio">
+                            <div class="container-card-description-portfolio">
                                 <h2 class="card-title">Instagram Stories Concept</h2>
                                 <p class="card-description">Design</p>
                             </div>
@@ -174,13 +349,27 @@
                     <li class="card-portfolio-list-item">
                         <a class="link portfolio-link" href="#">
                             <div class="img-plus-overlay">
-                                <img class="card-portfolio-img" src="./images/portfolio/organic-food.jpg"
-                                    alt="woman is holding fruit in a bag" width="360" height="300" />
+                                <picture>
+                                    <!-- DESKTOP -->
+                                    <source
+                                        srcset="./images/desktop/portfolio/organic.jpg 1x, ./images/desktop/portfolio/organic@2x.jpg 2x"
+                                        media="(min-width: 1158px)" width="360" height="300" />
+                                    <!-- TABLET -->
+                                    <source
+                                        srcset="./images/tablet/portfolio/organic.jpg 1x, ./images/tablet/portfolio/organic@2x.jpg 2x"
+                                        media="(min-width: 768px)" width="356" height="300" />
+                                    <!-- MOBILE -->
+                                    <source
+                                        srcset="./images/mobile/portfolio/organic.jpg 1x, ./images/mobile/portfolio/organic@2x.jpg 2x"
+                                        media="(min-width: 280px)" width="396" height="280" />
+                                    <img class="card-portfolio-img" src="./images/desktop/portfolio/organic.jpg"
+                                        alt="Organic Food" width="360" height="300" />
+                                </picture>
                                 <p class="overlay-portfolio">14 Stylish and User-Friendly App Design Concepts · Task
                                     Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
                                 </p>
                             </div>
-                            <div class="container-for-podpis-portfolio">
+                            <div class="container-card-description-portfolio">
                                 <h2 class="card-title">Organic Food</h2>
                                 <p class="card-description">Web Site</p>
                             </div>
@@ -189,13 +378,27 @@
                     <li class="card-portfolio-list-item">
                         <a class="link portfolio-link" href="#">
                             <div class="img-plus-overlay">
-                                <img class="card-portfolio-img" src="./images/portfolio/fresh-coffee.jpg"
-                                    alt="cup of coffee" width="360" height="300" />
+                                <picture>
+                                    <!-- DESKTOP -->
+                                    <source
+                                        srcset="./images/desktop/portfolio/fresh.jpg 1x, ./images/desktop/portfolio/fresh@2x.jpg 2x"
+                                        media="(min-width: 1158px)" width="360" height="300" />
+                                    <!-- TABLET -->
+                                    <source
+                                        srcset="./images/tablet/portfolio/fresh.jpg 1x, ./images/tablet/portfolio/fresh@2x.jpg 2x"
+                                        media="(min-width: 768px)" width="356" height="300" />
+                                    <!-- MOBILE -->
+                                    <source
+                                        srcset="./images/mobile/portfolio/fresh.jpg 1x, ./images/mobile/portfolio/fresh@2x.jpg 2x"
+                                        media="(min-width: 280px)" width="396" height="280" />
+                                    <img class="card-portfolio-img" src="./images/desktop/portfolio/fresh.jpg"
+                                        alt="Fresh Coffee" width="360" height="300" />
+                                </picture>
                                 <p class="overlay-portfolio">14 Stylish and User-Friendly App Design Concepts · Task
                                     Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App
                                 </p>
                             </div>
-                            <div class="container-for-podpis-portfolio">
+                            <div class="container-card-description-portfolio">
                                 <h2 class="card-title">Fresh Coffee</h2>
                                 <p class="card-description">Web Site</p>
                             </div>
@@ -273,6 +476,12 @@
             </div>
         </div>
     </footer>
+
+    <!-- script mobile menu -->
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/body-scroll-lock/3.1.5/bodyScrollLock.min.js"
+        integrity="sha512-HowizSDbQl7UPEAsPnvJHlQsnBmU2YMrv7KkTBulTLEGz9chfBoWYyZJL+MUO6p/yBuuMO/8jI7O29YRZ2uBlA=="
+        crossorigin="anonymous"></script>
+    <script src="./js/mobile-menu.js"></script>
 </body>
 
 </html>
